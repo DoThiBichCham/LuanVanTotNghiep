@@ -28,6 +28,7 @@
                     <th scope="col">Image</th>
                     <th scope="col">Product</th>
                     <th scope="col">Price</th>
+                    <th scope="col">Còn lại</th>
                     <th scope="col">Số lượng</th>
                     <th scope="col">Tổng tiền</th>
                 </tr>
@@ -45,8 +46,16 @@
                     </td>
                     <td><a href=""><?php echo $cart['pro_name']; ?></a></td>
                     <td><?php echo number_format($cart['pro_price']) ?>đ</td>
+                    <td><?php echo number_format($cart['remaining_amount']) ?></td>
                     <td>
-                        <input id="<?php echo $key ?>" value="<?php echo $cart['quatity'] ?>" min="1" class="update_quantity_shoppingcart input_product_detail product_detail_input_quantity" type="number">
+                        <input
+                            id="<?php echo $key ?>"
+                            value="<?php echo $cart['quatity'] ?>"
+                            min="1"
+                            max="<?php echo $cart['remaining_amount'] ?>"
+                            class="update_quantity_shoppingcart input_product_detail product_detail_input_quantity"
+                            type="number"
+                            >
                     </td>
                     <td class="total_price<?php echo $key; ?>"><?php echo number_format($cart['pro_price']*$cart['quatity']); ?>đ</td>
                 </tr>

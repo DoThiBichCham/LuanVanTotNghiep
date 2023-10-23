@@ -20,7 +20,10 @@ class ProductModel extends DB{
                 $id = $row['id'];
                 $cat_id = $row['cat_id'];
                 $query_select_image = "SELECT * FROM product_image where product_id = '$id'";
+                $query_select_category = "SELECT SUM(`pro_quantity`) as pro_quantity FROM `tbl_order_detail` WHERE `pro_id` = '$id'";
                 $result_select_image = $this->con->query($query_select_image);
+                $result_select_category = $this->con->query($query_select_category)->fetch();
+                $row['quantity'] = $row['quantity'] - $result_select_category['pro_quantity'];
                 if($result_select_image->rowCount() > 0){
                     while($row_select_image = $result_select_image->fetch()){
                         $image_of_product = $row_select_image['image'];
@@ -35,13 +38,11 @@ class ProductModel extends DB{
                     $row['cat_name'] =  $row_select_category['name'];
                 }
                 array_push($arr,$row);
-
             }
         }
 //         echo json_encode($arr);
 //         die();
         return json_encode($arr);
-
     }
 
     public function getListlimit($start_in,$number_display){
@@ -57,6 +58,9 @@ class ProductModel extends DB{
                 $cat_id = $row['cat_id'];
                 $query_select_image = "SELECT * FROM product_image where product_id = '$id'";
                 $result_select_image = $this->con->query($query_select_image);
+                $query_select_category = "SELECT SUM(`pro_quantity`) as pro_quantity FROM `tbl_order_detail` dt JOIN `tbl_order` od ON dt.order_id = od.id WHERE `pro_id` = '$id' and od.status = 2";
+                $result_select_category = $this->con->query($query_select_category)->fetch();
+                $row['quantity'] = $row['quantity'] - $result_select_category['pro_quantity'];
                 if($result_select_image->rowCount() > 0){
                     while($row_select_image = $result_select_image->fetch()){
                         $image_of_product = $row_select_image['image'];
@@ -190,7 +194,9 @@ class ProductModel extends DB{
                     array_push($row['image'],$image_of_product);
                 }
             }
-
+            $query_select_category = "SELECT SUM(`pro_quantity`) as pro_quantity FROM `tbl_order_detail` dt JOIN `tbl_order` od ON dt.order_id = od.id WHERE `pro_id` = '$id' and od.status = 2";
+            $result_select_category = $this->con->query($query_select_category)->fetch();
+            $row['remaining_amount'] = $row['quantity'] - $result_select_category['pro_quantity'];
             $product_edit = $row;
         }
         return json_encode($product_edit);
@@ -252,6 +258,15 @@ class ProductModel extends DB{
     public function update_status($id,$status,$updated_at){
         $query = "UPDATE productes SET status = '$status',updated_at = '$updated_at' WHERE id = '$id'";
         $this->con->query($query);
+    }
+
+    public function update_qty_when_revcieve_order($id, $sub_qty) {
+        $query =  "SELECT `quantity` FROM `productes` WHERE `id` = '$id'";
+        $result =  $this->con->query($query)->fetch();
+        $totalQuantity = $result["quantity"];
+        $quantity = $totalQuantity -  $sub_qty;
+        $queryUpdate = "UPDATE productes SET quantity = '$quantity' WHERE id = '$id'";
+        $this->con->query($queryUpdate);
     }
 
     public function qty_product_by_cat($id){

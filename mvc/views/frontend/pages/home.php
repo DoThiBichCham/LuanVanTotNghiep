@@ -7,7 +7,7 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="./public/frontend/images/slider/logo1.jpg" alt="First slide">
+                <img class="d-block w-100" src="./public/frontend/images/slider/bannerr.jpg" alt="First slide">
 
             </div>
             <?php

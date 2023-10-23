@@ -19,14 +19,14 @@
                 $mail->isSMTP();                                            //Send using SMTP
                 $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                $mail->Username   = 'phammy773734@gmail.com';                     //SMTP username
-                $mail->Password   = 'jqbwnmwkhfndmoxt';                               //SMTP password
+                $mail->Username   = 'chamb1910037@student.ctu.edu.vn';                     //SMTP username
+                $mail->Password   = 'djthynfvuatxvpyc';                               //SMTP password
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
                 $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
             
                 //Recipients
-                $mail->setFrom('phammy773734@gmail.com', 'Mailer');
-                $mail->addAddress('myb1910105@student.ctu.edu.vn', 'Joe User');     //Add a recipient
+                $mail->setFrom('chamb1910037@student.ctu.edu.vn', 'Mailer');
+                $mail->addAddress('docham16112001@gmail.com', 'Joe User');     //Add a recipient
             
                 //Content
                 $mail->isHTML(true);                                  //Set email format to HTML
@@ -49,14 +49,14 @@
                 $mail->isSMTP();                                            //Send using SMTP
                 $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                $mail->Username   = 'phammy773734@gmail.com';                     //SMTP username
-                $mail->Password   = 'jqbwnmwkhfndmoxt';                               //SMTP password
+                $mail->Username   = 'chamb1910037@student.ctu.edu.vn';                     //SMTP username
+                $mail->Password   = 'djthynfvuatxvpyc';                               //SMTP password
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
                 $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
             
                 //Recipients
                 $mail->setFrom($email, $full_name);
-                $mail->addAddress('phammy773734@gmail.com','Mailer');     //Add a recipient
+                $mail->addAddress('chamb1910037@student.ctu.edu.vn','Mailer');     //Add a recipient
                 // $mail->addAddress('ellen@example.com');               //Name is optional
                 // $mail->addReplyTo('info@example.com', 'Information');
                 // $mail->addCC('cc@example.com');
@@ -87,12 +87,12 @@
                 $mail->isSMTP();                                            //Send using SMTP
                 $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                $mail->Username   = 'phammy773734@gmail.com';                     //SMTP username
-                $mail->Password   = 'jqbwnmwkhfndmoxt';                               //SMTP password
+                $mail->Username   = 'chamb1910037@student.ctu.edu.vn';                     //SMTP username
+                $mail->Password   = 'djthynfvuatxvpyc';                               //SMTP password
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
                 $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
                 //Recipients
-                $mail->setFrom('phammy773734@gmail.com', 'Mailer');
+                $mail->setFrom('chamb1910037@student.ctu.edu.vn', 'Mailer');
                 $mail->addAddress($order_info['email'], $order_info['full_name']);     //Add a recipient
                 
                 
@@ -138,7 +138,7 @@
                                                             <tbody>
                                                                 <tr style="margin:0;padding:0">
                                                                     <td style="margin:0;padding:0 0 24px;border-bottom:2px solid #b49763">
-                                                                        <a style="color: #000; text-decoration: none" href="http://localhost/Composer2_pdf/index.php">SHOP NỘI THẤT</a> 
+                                                                        <a style="color: #000; text-decoration: none" href="http://localhost/Book/index.php">BOOKSTORE</a> 
                                                                     </td>
                                                                 </tr>
                                                                 <tr style="margin:0;padding:0">

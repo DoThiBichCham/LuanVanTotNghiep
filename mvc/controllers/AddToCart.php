@@ -17,6 +17,7 @@
                 $cart = array(
                     $id => array(
                         'pro_name' => $product_detail->name,
+                        'remaining_amount' => $product_detail->remaining_amount,
                         'pro_price' => ($product_detail->price_promotion!=0)?$product_detail->price_promotion:$product_detail->price_unit,
                         'image' => $product_detail->image[0],
                         'quatity' => $qty
@@ -27,6 +28,7 @@
                 if (array_key_exists($id, $cart)) {
                     $cart[$id] = array(
                         'pro_name' => $product_detail->name,
+                        'remaining_amount' => $product_detail->remaining_amount,
                         'pro_price' => ($product_detail->price_promotion!=0)?$product_detail->price_promotion:$product_detail->price_unit,
                         'image' => $product_detail->image[0],
                         'quatity' => (int)$cart[$id]["quatity"] + (int)$qty
@@ -34,6 +36,7 @@
                 } else {
                     $cart[$id] = array(
                         'pro_name' => $product_detail->name,
+                        'remaining_amount' => $product_detail->remaining_amount,
                         'pro_price' => ($product_detail->price_promotion!=0)?$product_detail->price_promotion:$product_detail->price_unit,
                         'image' => $product_detail->image[0],
                         'quatity' => (int)$qty

@@ -1,4 +1,5 @@
 <?php 
+require_once('./mvc/helper/process_url.php');
     class CommentPro extends Controller{
         public $order;
         public $order_detail;
@@ -24,6 +25,15 @@
            $this->blog_categoryofblog = $this->model('Blog_CategoryOfBlogModel');
            $this->blog_tags = $this->model('Blog_TagsModel');
            $this->comment_pro = $this->model('Comment_ProModel');
+        }
+
+        public function index(){
+            // $pro_id = $_GET['pro_id'];
+            $comments  = $this->comment_pro->getList('1697289719');
+            $comments  = json_decode($comments );
+            $this->view('backend/layout/master',[
+                'page'      => 'backend/comment/index',
+            ]);
         }
 
         public function store(){
