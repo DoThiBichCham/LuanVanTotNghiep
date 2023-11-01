@@ -22,9 +22,9 @@
                         </div>
                     </a>
                 </li>
-                <!-- <li class="nav-item nav_item_down">
-                    <a class="nav-link" href="index.php?url=Home/product">Sàn sách điện tử<span><i class="fa fa-chevron-down icon_navbar" aria-hidden="true"></i></span>
-                        <div class="sub_navlink">
+                <li class="nav-item nav_item_down">
+                    <a class="nav-link" href="index.php?url=Home/product_ebook">Sàn sách Ebook<span><i class="fa fa-chevron-down icon_navbar" aria-hidden="true"></i></span>
+                        <!-- <div class="sub_navlink">
                             <?php
                                 if(isset($data['categories'])){
                                     foreach($data['categories'] as $category){ ?>
@@ -32,9 +32,9 @@
                             <?php }  } ?>
 
 
-                        </div>
+                        </div> -->
                     </a>
-                </li> -->
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?url=Home/blog">Blog</a>
                 </li>

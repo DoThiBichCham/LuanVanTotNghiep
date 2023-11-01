@@ -1,4 +1,4 @@
-<!-- @extends('admin.layout.master')
+@extends('admin.layout.master')
 
 @section('content') -->
 
@@ -82,4 +82,4 @@
         </div>
     </div>
 
-<!-- @endsection -->
+<!-- @endsection

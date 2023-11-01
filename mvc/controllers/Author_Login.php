@@ -1,6 +1,6 @@
 <?php
-    class User_Login extends Controller{
-        public $user;
+    class Author_Login extends Controller{
+        public $author;
         public $slider;
         public $product;
         public $category;
@@ -11,7 +11,7 @@
         public $blog_tags;
         public function __construct()
         {
-            $this->user = $this->model('UserModel');
+            $this->author = $this->model('AuthorModel');
             $this->slider = $this->model('SliderModel');
             $this->product = $this->model('ProductModel');
             $this->category = $this->model('CategoryModel');
@@ -30,12 +30,12 @@
 
         public function logout(){
 
-            if(isset($_SESSION['user_login'])){
-                unset($_SESSION['user_login']);
+            if(isset($_SESSION['author_login'])){
+                unset($_SESSION['author_login']);
                 unset($_SESSION['cart']);
             }
             $this->view('frontend/login/login');
-            header('location index.php?url=User_Login/login');
+            header('location index.php?url=author_Login/login');
 
         }
 
@@ -68,10 +68,10 @@
             }else{
                 $email = $_POST['email'];
                 $password = md5($_POST['password']);
-                $result = json_decode($this->user->test_login($email,$password));/////
+                $result = json_decode($this->author->test_login($email,$password));/////
                 // echo json_encode($result);
                 // die();
-//                header('location: index.php?url=User_Login/login');
+//                header('location: index.php?url=author_Login/login');
                 if(!$result){ ///đăng nhập thất bại 
                     $this->view('frontend/login/login',[
                         'error'         => $error,
@@ -80,10 +80,10 @@
                     ]);
 
                 }else{ ///đn thành công
-                    $_SESSION['user_login']['id'] = $result->id;
-                    $_SESSION['user_login']['name'] = $result->user_name;
+                    $_SESSION['author_login']['id'] = $result->id;
+                    $_SESSION['author_login']['name'] = $result->user_name;
                     if($result->image != "" && $result->image!=null){
-                        $_SESSION['user_login']['avatar'] = $result->image;
+                        $_SESSION['author_login']['avatar'] = $result->image;
                     }
 
                    
@@ -115,8 +115,8 @@
 
         }
 
-        public function register(){
-            $this->view('frontend/login/register');
+        public function register_author(){
+            $this->view('frontend/login/register_author');
         }
 
 
@@ -240,7 +240,7 @@
                     $password = md5($_POST['password']);
                     $created_at = Date('Y-m-d H:i:s');
                     $updated_at = Date('Y-m-d H:i:s');
-                    $result = json_decode($this->user->insert($user_name,$full_name,$email,$phone,$country,$conscious,$district,$commune,$address_detail,$password,$created_at,$updated_at));
+                    $result = json_decode($this->author->insert($user_name,$full_name,$email,$phone,$country,$conscious,$district,$commune,$address_detail,$password,$created_at,$updated_at));
                     if($result){
                         $this->view('frontend/login/login',[
                             'message_success' => 'Bạn đã tạo tài khoản thành công'

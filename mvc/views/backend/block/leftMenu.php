@@ -24,7 +24,7 @@
                 <a href="index.php?url=Blog"><i class="fa fa-cloud-upload" aria-hidden="true"></i>Post Blog </a>
             </li>
             <li>
-                <a href="index.php?url=CommentPro"><i class="fa fa-comments" aria-hidden="true"></i>Comment </a>
+                <!-- <a href="index.php?url=CommentPro"><i class="fa fa-comments" aria-hidden="true"></i>Comment </a> -->
             </li>
             <li>
                 <a href="index.php?url=Slider"><i class="fa fa-picture-o" aria-hidden="true"></i> Slider</a>
@@ -32,7 +32,10 @@
             <li>
                 <a href="index.php?url=User"><i class="fa fa-user" aria-hidden="true"></i></i> User</a>
             </li>
-           
+
+           <li>
+                <a href="index.php?url=Author"><i class="fa fa-user" aria-hidden="true"></i></i> Author</a>
+            </li>
         </ul>
     </div>
    
