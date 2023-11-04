@@ -118,9 +118,7 @@
         public function register(){
             $this->view('frontend/login/register');
         }
-
-
-
+       
         public function post_register(){
 
 //            echo json_encode($_POST);

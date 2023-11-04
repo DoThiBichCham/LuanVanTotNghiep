@@ -46,7 +46,7 @@
         <div class="row">
 
             <div  class="col-sm-8 offset-sm-2">
-                <form action="index.php?url=User_Login/post_register" method="POST" class="border_form">
+                <form action="index.php?url=Author_Login/post_register_author" method="POST" class="border_form">
                     <h2 class="text-center mb-4">Đăng ký tác giả</h2>
                     <?php
                         if(isset($data['message_error'])){ ?>

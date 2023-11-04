@@ -12,7 +12,13 @@
                 <a href="index.php?url=Category/index"><i class="fa fa-list-alt"></i> Category</a>
             </li>
             <li>
+                <a href="index.php?url=Category_Ebook/index"><i class="fa fa-th-list"></i> Category_Ebook</a>
+            </li>
+            <li>
                 <a href="index.php?url=Product/index"><i class="fa fa-desktop"></i> Product</a>
+            </li>
+            <li>
+                <a href="index.php?url=Product_Ebook/index"><i class="fa fa-book"></i> Product_Ebook</a>
             </li>
             <li>
                 <a href="index.php?url=Tags/index"><i class="fa fa-tags"></i> Tags</a> 

@@ -121,7 +121,7 @@
 
 
 
-        public function post_register(){
+        public function post_register_author(){
 
 //            echo json_encode($_POST);
 //            die();
@@ -216,13 +216,13 @@
 
             if($test_validate){
 
-                $this->view('frontend/login/register',[
+                $this->view('frontend/login/register_author',[
                     'error'         => $error,
                     'result_old'    => $result_old
                 ]);
             }else{
                 if($_POST['password'] != $_POST['password_confirm']){
-                    $this->view('frontend/login/register',[
+                    $this->view('frontend/login/register_author',[
                         'error'         => $error,
                         'result_old'    => $result_old,
                         'message_error' => "Mật khẩu không chính xác"
