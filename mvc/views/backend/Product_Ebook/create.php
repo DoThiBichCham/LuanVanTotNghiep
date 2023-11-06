@@ -11,7 +11,7 @@
                 <h5 class="alert alert-danger text-white"><?php echo $data['message_error']; ?></h5>
             <?php }  ?>
                 <br>
-                <form method="POST" action=<?php echo isset($data['product_edit']) ?'index.php?url=Product/update/'.$data['product_edit']->id:'index.php?url=Product/store';  ?> enctype="multipart/form-data" class="form-label-left input_mask">
+                <form method="POST" action=<?php echo isset($data['product_edit']) ?'index.php?url=Product_Ebook/update/'.$data['product_edit']->id:'index.php?url=Product_Ebook/store';  ?> enctype="multipart/form-data" class="form-label-left input_mask">
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-6 col-sm-6 mb-2">
@@ -81,12 +81,12 @@
 
                             </div>
                             <div class="col-md-6 col-sm-6 mb-2">
-                            <h4>Tên danh mục</h4>
+                            <h4>Tên tác giả</h4>
                             <select name="cat_id" class="form-control">
                                <?php 
-                                if(isset($data['categories'])){
-                                    foreach($data['categories'] as $category){ ?>
-                                        <option value="<?php echo $category->id ?>"><?php echo $category->name ?></option>
+                                if(isset($data['author'])){
+                                    foreach($data['author'] as $author){ ?>
+                                        <option value="<?php echo $author->id ?>"><?php echo $author->full_name ?></option>
                                <?php  } } ?>
                             </select>
                             <br>
@@ -117,7 +117,7 @@
                     <!-- <div class="ln_solid"></div> -->
                     <div class="form-group row">
                         <div class="col-md-8 col-sm-8  offset-md-4">
-                            <a href="index.php?url=Product/index"><button type="button" class="btn btn-primary">Cancel</button></a>
+                            <a href="index.php?url=Product_Ebook/index"><button type="button" class="btn btn-primary">Cancel</button></a>
                             <?php 
                                 if(isset($data['product_edit'])){ ?>
                                 <button type="submit" name="btnStoreProduct" class="btn btn-danger">Update</button>
