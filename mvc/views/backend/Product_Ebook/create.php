@@ -28,7 +28,7 @@
                                     <span class="text-danger"><?php echo $data['error']['name'][0]; ?></span>
                                 <?php } ?>
                             </div>
-                            <div class="col-md-6 col-sm-6 mb-2">
+                            <!-- <div class="col-md-6 col-sm-6 mb-2">
                                 <h4>Số lượng sản phẩm</h4>
                                 <input type="text" name="quantity" class="form-control" value="<?php if(isset($data['product_edit'])) echo $data['product_edit']->quantity;
                                                                                                      else{
@@ -41,7 +41,7 @@
                                         <span class="text-danger"><?php echo $data['error']['quantity'][0]; ?></span>
                                 <?php    }
                                 ?>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="form-group">
@@ -91,7 +91,7 @@
                             </select>
                             <br>
                             <?php 
-                                if(isset($data['error']['cat_id']) && isset($error['error']['cat_id'][0])){ ?>
+                                if(isset($data['error']['cat_id']) && isset($data['error']['cat_id'][0])){ ?>
                                     <span class="text-danger"><?php echo $data['error']['cat_id'][0]; ?></span>
                             <?php } ?>
                            

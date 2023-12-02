@@ -4,6 +4,7 @@
     class Home extends Controller{
         public $slider;
         public $product;
+        public $Product_Ebook;
         public $category;
         public $blog;
         public $categoryofblog;
@@ -16,6 +17,7 @@
         {
             $this->slider = $this->model('SliderModel');
             $this->product = $this->model('ProductModel');
+            $this->Product_Ebook = $this->model('ProductEbookModel');
             $this->category = $this->model('CategoryModel');
             $this->blog = $this->model('BlogModel');
             $this->categoryofblog = $this->model('CategoryBlogModel');
@@ -30,6 +32,7 @@
             
             $list_slider = json_decode($this->slider->getList());
             $list_product = json_decode($this->product->getList_limit());
+            $list_Product_Ebook = json_decode($this->Product_Ebook->getList_limit());
             $list_category = json_decode($this->category->getListLimit4());
             $categories = json_decode($this->category->getList());
 
@@ -62,10 +65,13 @@
                 $page_index =  json_decode($process_url->index_page($_GET['url']));
                 $start_in = ($page_index-1)*$number_display;
                 $list_product = json_decode($this->product->getListlimit($start_in,$number_display));
+                $list_Product_Ebook = json_decode($this->Product_Ebook->getListlimit($start_in,$number_display));
+                
             }else{ //url khong chua page
                 $page_index=1;
                 $start_in = 0;
                 $list_product = json_decode($this->product->getListlimit($start_in,$number_display));
+                $list_Product_Ebook = json_decode($this->Product_Ebook->getListlimit($start_in,$number_display));
             }
             
            
@@ -78,6 +84,7 @@
                 'page'  => 'frontend/pages/home',
                 'list_slider' => $list_slider,
                 'list_product'  => $list_product,
+                'list_Product_Ebook'  => $list_Product_Ebook,
                 'list_category' => $list_category,
                 'list_blog'     => $list_blog,
                 'categories'    => $categories,
@@ -142,10 +149,13 @@
                  $page_index =  json_decode($process_url->index_page($_GET['url']));
                  $start_in = ($page_index-1)*$number_display;
                  $list_product = json_decode($this->product->getListlimit_cat($start_in,$number_display,$id));
+                 $list_Product_Ebook = json_decode($this->Product_Ebook->getListlimit_cat($start_in,$number_display,$id));
+
              }else{ //url khong chua page
                  $page_index=1;
                  $start_in = 0;
                  $list_product = json_decode($this->product->getListlimit_cat($start_in,$number_display,$id));
+                 $list_Product_Ebook = json_decode($this->Product_Ebook->getListlimit_cat($start_in,$number_display,$id));
              }
 
 
@@ -159,6 +169,7 @@
                 'page'                  => 'frontend/pages/category',
                 'categories'            => $categories,
                 'list_product'          => $list_product,
+                'list_Product_Ebook'          => $list_Product_Ebook,
                 'category_item'         => $category_item,
                 'list_blog'             => $list_blog,
                 'total_cart'            => $total_cart,
@@ -346,10 +357,12 @@
                 $page_index =  json_decode($process_url->index_page($_GET['url']));
                 $start_in = ($page_index-1)*$number_display;
                 $list_product = json_decode($this->product->getListlimit($start_in,$number_display));
+                $list_Product_Ebook = json_decode($this->Product_Ebook->getListlimit($start_in,$number_display));
             }else{ //url khong chua page
                 $page_index=1;
                 $start_in = 0;
                 $list_product = json_decode($this->product->getListlimit($start_in,$number_display));
+                $list_Product_Ebook = json_decode($this->Product_Ebook->getListlimit($start_in,$number_display));
             }
 
 
@@ -358,6 +371,7 @@
                 'page'                  => 'frontend/pages/product',
                 'categories'            => $categories,
                 'list_product'          => $list_product,
+                'list_Product_Ebook'          => $list_Product_Ebook,
                 'list_blog'             => $list_blog,
                 'total_cart'            => $total_cart,
                 'total_page_number' => $total_page_number,
@@ -389,10 +403,13 @@
                 $page_index =  json_decode($process_url->index_page($_GET['url']));
                 $start_in = ($page_index-1)*$number_display;
                 $list_product = json_decode($this->product->list_low_to_high_product_limit($start_in,$number_display));
+                $list_Product_Ebook = json_decode($this->Product_Ebook->list_low_to_high_product_limit($start_in,$number_display));
             }else{ //url khong chua page
                 $page_index=1;
                 $start_in = 0;
                 $list_product =json_decode($this->product->list_low_to_high_product_limit($start_in,$number_display));
+                $list_Product_Ebook = json_decode($this->Product_Ebook->list_low_to_high_product_limit($start_in,$number_display));
+
             }
 
           
@@ -400,6 +417,7 @@
                 'page'                  => 'frontend/pages/product',
                 'categories'            => $categories,
                 'list_product'          => $list_product,
+                'list_Product_Ebook'          => $list_Product_Ebook,
                 'list_blog'             => $list_blog,
                 'total_cart'            => $total_cart,
                 'message_success'       => 'Kết quả của sắp xếp từ thấp đến cao theo giá',
@@ -432,16 +450,21 @@
                  $page_index =  json_decode($process_url->index_page($_GET['url']));
                  $start_in = ($page_index-1)*$number_display;
                  $list_product = json_decode($this->product->list_high_to_low_product_limit($start_in,$number_display));
+                 $list_Product_Ebook = json_decode($this->Product_Ebook->list_low_to_high_product_limit($start_in,$number_display));
+
              }else{ //url khong chua page
                  $page_index=1;
                  $start_in = 0;
                  $list_product = json_decode($this->product->list_high_to_low_product_limit($start_in,$number_display));
+                 $list_Product_Ebook = json_decode($this->Product_Ebook->list_low_to_high_product_limit($start_in,$number_display));
+
              }
             
             $this->view('frontend/layout/master',[
                 'page'                  => 'frontend/pages/product',
                 'categories'            => $categories,
                 'list_product'          => $list_product,
+                'list_Product_Ebook'          => $list_Product_Ebook,
                 'list_blog'             => $list_blog,
                 'total_cart'            => $total_cart,
                 'message_success'       => 'Kết quả của sắp xếp từ cao đến thấp theo giá'
@@ -473,10 +496,14 @@
                 $page_index =  json_decode($process_url->index_page($_GET['url']));
                 $start_in = ($page_index-1)*$number_display;
                 $list_product = json_decode($this->product->low_to_high_category_limit($start_in,$number_display,$id));
+                $list_Product_Ebook = json_decode($this->Product_Ebook->low_to_high_category_limit($start_in,$number_display,$id));
+
             }else{ //url khong chua page
                 $page_index=1;
                 $start_in = 0;
                 $list_product =json_decode($this->product->low_to_high_category_limit($start_in,$number_display,$id));
+                $list_Product_Ebook = json_decode($this->Product_Ebook->low_to_high_category_limit($start_in,$number_display,$id));
+
             }
 
           
@@ -484,6 +511,7 @@
                 'page'                  => 'frontend/pages/category',
                 'categories'            => $categories,
                 'list_product'          => $list_product,
+                'list_Product_Ebook'          => $list_Product_Ebook,
                 'list_blog'             => $list_blog,
                 'total_cart'            => $total_cart,
                 'message_success'       => 'Kết quả của sắp xếp từ thấp đến cao theo giá '.$category_item->name,
@@ -527,11 +555,13 @@
             $categories = json_decode($this->category->getList());
             $list_product = json_decode($this->product->list_product_need_find($search_key));
             $list_blog = json_decode($this->blog->getList());
+            $list_Product_Ebook = json_decode($this->Product_Ebook->list_product_need_find($search_key));
             
             $this->view('frontend/layout/master',[
                 'page'                  => 'frontend/pages/product',
                 'categories'            => $categories,
                 'list_product'          => $list_product,
+                'list_Product_Ebook'          => $list_Product_Ebook,
                 'list_blog'             => $list_blog,
                 'total_cart'            => $total_cart,
                 'message_success'       => 'Kết quả tìm kiếm "'.$search_key.'"',
@@ -643,7 +673,97 @@
                 'color' => 'red'
             ]);
         }
+        public function author(){
+            $total_cart = 0;
+            if(isset($_SESSION['cart'])){
+                foreach($_SESSION['cart'] as $cart){
+                    $total_cart+=$cart['quatity'];
+                }
+            }
+            $author = json_decode($this->author->getList());
+            $list_blog = json_decode($this->blog->getList());
+
+            //pagination products
+            $count_product  = json_decode($this->Product_Ebook->count_product());
+            
+            $number_display = 9;
+            $total_page_number = ceil($count_product/$number_display);
+           
+            $process_url = new process_url();
+            $is_page = json_decode($process_url->is_page($_GET['url']));
+            // url chua page
+            if($is_page){
+                $page_index =  json_decode($process_url->index_page($_GET['url']));
+                $start_in = ($page_index-1)*$number_display;
+                // $list_product = json_decode($this->Product_Ebook->getListlimit($start_in,$number_display));
+                $list_Product_Ebook = json_decode($this->Product_Ebook->getListlimit($start_in,$number_display));
+            }else{ //url khong chua page
+                $page_index=1;
+                $start_in = 0;
+                // $list_product = json_decode($this->product->getListlimit($start_in,$number_display));
+                $list_Product_Ebook = json_decode($this->Product_Ebook->getListlimit($start_in,$number_display));
+            }
+
+
+            
+            $this->view('frontend/layout/master',[
+                'page'                  => 'frontend/pages/product',
+                'categories'            => $categories,
+                // 'list_product'          => $list_product,
+                'list_Product_Ebook'          => $list_Product_Ebook,
+                'list_blog'             => $list_blog,
+                'total_cart'            => $total_cart,
+                'total_page_number' => $total_page_number,
+                'page_index'        => $page_index
+            ]);
+        }
+        public function Product_Ebook(){
+            $total_cart = 0;
+            if(isset($_SESSION['cart'])){
+                foreach($_SESSION['cart'] as $cart){
+                    $total_cart+=$cart['quatity'];
+                }
+            }
+            $categories = json_decode($this->category->getList());
+            $list_blog = json_decode($this->blog->getList());
+
+            //pagination products
+            $count_product  = json_decode($this->product->count_product());
+            
+            $number_display = 9;
+            $total_page_number = ceil($count_product/$number_display);
+           
+            $process_url = new process_url();
+            $is_page = json_decode($process_url->is_page($_GET['url']));
+            // url chua page
+            if($is_page){
+                $page_index =  json_decode($process_url->index_page($_GET['url']));
+                $start_in = ($page_index-1)*$number_display;
+                $list_product = json_decode($this->product->getListlimit($start_in,$number_display));
+                $list_Product_Ebook = json_decode($this->Product_Ebook->getListlimit($start_in,$number_display));
+            }else{ //url khong chua page
+                $page_index=1;
+                $start_in = 0;
+                $list_product = json_decode($this->product->getListlimit($start_in,$number_display));
+                $list_Product_Ebook = json_decode($this->Product_Ebook->getListlimit($start_in,$number_display));
+            }
+
+
+            
+            $this->view('frontend/layout/master',[
+                'page'                  => 'frontend/pages/product',
+                'categories'            => $categories,
+                'list_product'          => $list_product,
+                'list_Product_Ebook'          => $list_Product_Ebook,
+                'list_blog'             => $list_blog,
+                'total_cart'            => $total_cart,
+                'total_page_number' => $total_page_number,
+                'page_index'        => $page_index
+            ]);
+        }
+
 
 
     }
+    
 ?>

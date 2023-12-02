@@ -210,7 +210,7 @@
                 'productes_ebook'     => $productes_ebook,
                 'message'       => $message
             ]);
-            header('location: index.php?url=Product');
+            header('location: index.php?url=Product_Ebook');
         }
 
         public function edit($id){
@@ -286,7 +286,7 @@
                 $productes_ebook = json_decode($productes_ebook);
                 $message = ($result=='true')?"Cập nhật sản phẩm thành công":"Lỗi cập nhật sản phẩm";
                 $this->view('backend/layout/master',[
-                    'page'          => 'backend/product/index',
+                    'page'          => 'backend/Product_Ebook/index',
                     'productes_ebook'     => $productes_ebook,
                     'message'       => $message
                 ]);

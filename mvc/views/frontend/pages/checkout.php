@@ -101,7 +101,7 @@
                         <label for="exampleInputEmail1">Chọn phương thức thanh toán</label>
                         <select name="method_payment" class="form-control">
                             <option value="0">Thanh toán khi nhận hàng</option>
-                            <option value="1">Thanh toán online - MOMO</option>
+                            <!-- <option value="1">Thanh toán online - MOMO</option> -->
                             <option value="2">Thanh toán online - VNPAY</option>
                         </select>
                     </div>

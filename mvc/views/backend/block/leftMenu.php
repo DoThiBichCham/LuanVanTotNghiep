@@ -11,14 +11,14 @@
             <li>
                 <a href="index.php?url=Category/index"><i class="fa fa-list-alt"></i> Category</a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="index.php?url=Category_Ebook/index"><i class="fa fa-th-list"></i> Category_Ebook</a>
-            </li>
+            </li> -->
             <li>
                 <a href="index.php?url=Product/index"><i class="fa fa-desktop"></i> Product</a>
             </li>
             <li>
-                <a href="index.php?url=Product_Ebook/index"><i class="fa fa-book"></i> Product_Ebook</a>
+                <!-- <a href="index.php?url=Product_Ebook/index"><i class="fa fa-book"></i> Product_Ebook</a> -->
             </li>
             <li>
                 <a href="index.php?url=Tags/index"><i class="fa fa-tags"></i> Tags</a> 
@@ -30,7 +30,7 @@
                 <a href="index.php?url=Blog"><i class="fa fa-cloud-upload" aria-hidden="true"></i>Post Blog </a>
             </li>
             <li>
-                <!-- <a href="index.php?url=CommentPro"><i class="fa fa-comments" aria-hidden="true"></i>Comment </a> -->
+                <a href="index.php?url=CommentPro"><i class="fa fa-comments" aria-hidden="true"></i>Comment </a>
             </li>
             <li>
                 <a href="index.php?url=Slider"><i class="fa fa-picture-o" aria-hidden="true"></i> Slider</a>
@@ -40,7 +40,7 @@
             </li>
 
            <li>
-                <a href="index.php?url=Author"><i class="fa fa-user" aria-hidden="true"></i></i> Author</a>
+                <!-- <a href="index.php?url=Author"><i class="fa fa-user" aria-hidden="true"></i></i> Author</a> -->
             </li>
         </ul>
     </div>

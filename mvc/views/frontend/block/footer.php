@@ -37,7 +37,8 @@
                     <div class="footer_list">
                         <p>Sàn sách BOOKSTORE
 Tập trung nhiều sách với sự tham gia của nhiều đơn vị phát hành điện tử uy tín như Waka, Nhà xuất bản Trẻ, Nhà xuất bản Y học, Nhà xuất bản Giáo dục Việt Nam,...</p>
-                        <p>Địa chỉ: 102, Hưng Lợi, Ninh Kiều, Cần Thơ. <br>Email: bookstore@gmail.com</p>
+                        <p>Địa chỉ: 102, Hưng Lợi, Ninh Kiều, Cần Thơ. <br>Email: <a href="mailto:bookstore@gmail.com">bookstore@gmail.com</a><br></p>
+
                     </div>
                 </div>
             </div>

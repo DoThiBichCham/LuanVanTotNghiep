@@ -87,7 +87,7 @@
                     <div class="text-center">
                         <button type="submit" class="btn2 btn_login btn-primary mr-4">Đăng nhập</button>
                         <a href="index.php?url=User_Login/register" class="btn2 btn_login btn-primary mr-4">Đăng ký</a>
-                        <a href="index.php?url=Author_Login/register_author" class="btn2 btn_login btn-primary mr-4">Đăng ký tác giả</a>
+                        <!-- <a href="index.php?url=Author_Login/register_author" class="btn2 btn_login btn-primary mr-4">Đăng ký tác giả</a> -->
                     </div>
 
                 </form>

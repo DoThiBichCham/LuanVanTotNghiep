@@ -72,13 +72,13 @@ class Payment extends Controller{
    
     public function proccess_vnpay($total){
         
-        $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-        $vnp_Returnurl = "http://localhost/Composer2_pdf/index.php?url=History_Order/index";
-        $vnp_TmnCode = "URHY337Q";//Mã website tại VNPAY 
-        $vnp_HashSecret = "ZWJHOFQYTBYRPFLFZXIPCGSYPKINECAE"; //Chuỗi bí mật
+        $vnp_Url = " https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
+        $vnp_Returnurl = "http://localhost/Book/index.php?url=History_Order/index";
+        $vnp_TmnCode = "7QUSGUZH";//Mã website tại VNPAY 
+        $vnp_HashSecret = "OJMGHPMACMJNPJXKIEXHMWSMCYCNAUEG"; //Chuỗi bí mật
 
         $vnp_TxnRef = rand(00,9999); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
-        $vnp_OrderInfo = 'Thanh toan demo';
+        $vnp_OrderInfo = 'Thanh toan don hang';
         $vnp_OrderType = 'billpayment';
         $vnp_Amount = $total * 100;
         $vnp_Locale = 'vn';

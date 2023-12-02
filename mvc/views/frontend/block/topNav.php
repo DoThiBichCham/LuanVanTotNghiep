@@ -22,19 +22,19 @@
                         </div>
                     </a>
                 </li>
-                <li class="nav-item nav_item_down">
-                    <a class="nav-link" href="index.php?url=Home/product_ebook">Sàn sách Ebook<span><i class="fa fa-chevron-down icon_navbar" aria-hidden="true"></i></span>
-                        <!-- <div class="sub_navlink">
+                <!-- <li class="nav-item nav_item_down">
+                    <a class="nav-link" href="index.php?url=Home/Product_Ebook">Sàn sách Ebook<span><i class="fa fa-chevron-down icon_navbar" aria-hidden="true"></i></span>
+                        <div class="sub_navlink">
                             <?php
-                                if(isset($data['categories'])){
-                                    foreach($data['categories'] as $category){ ?>
-                                        <a href="index.php?url=Home/category/<?php echo $category->id; ?>"><?php echo $category->name; ?></a>
+                                if(isset($data['list_Product_Ebook'])){
+                                    foreach($data['list_Product_Ebook'] as $product_ebook){ ?>
+                                        <a href="index.php?url=Home/author/<?php echo $product_ebook->id; ?>"><?php echo $product_ebook->cat_name; ?></a>
                             <?php }  } ?>
 
 
-                        </div> -->
+                        </div>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?url=Home/blog">Blog</a>
                 </li>
